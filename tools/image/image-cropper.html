@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Cropper - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Cropper.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Image Cropper</h1>
+                <p class="text-muted">Crop images to your desired size</p>
+            </div>
+
+            <div class="tool-content">
+                <div class="file-upload-area" id="dropZone">
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                    <div class="text-center">
+                        <i class="bi bi-cloud-upload" style="font-size: 48px;"></i>
+                        <h4>Drag & Drop your image here</h4>
+                        <p class="text-muted">or</p>
+                        <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                            Choose File
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="aspectRatio" class="form-label">Aspect Ratio</label>
+                            <select class="form-select" id="aspectRatio">
+                                <option value="free">Free</option>
+                                <option value="1:1">Square (1:1)</option>
+                                <option value="4:3">Standard (4:3)</option>
+                                <option value="16:9">Widescreen (16:9)</option>
+                                <option value="3:2">Photo (3:2)</option>
+                                <option value="2:3">Portrait (2:3)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="quality" class="form-label">Quality (1-100)</label>
+                            <input type="range" class="form-range" id="quality" min="1" max="100" value="90">
+                            <div class="text-center" id="qualityValue">90%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="width" class="form-label">Width (px)</label>
+                            <input type="number" class="form-control" id="width" min="1" placeholder="Enter width">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="height" class="form-label">Height (px)</label>
+                            <input type="number" class="form-control" id="height" min="1" placeholder="Enter height">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-primary" id="cropBtn" disabled>Crop Image</button>
+                </div>
+
+                <div class="spinner" id="loadingSpinner"></div>
+
+                <div id="cropper-container" class="mt-4" style="display: none;">
+                    <div class="img-container">
+                        <img id="image" src="" alt="Image to crop">
+                    </div>
+                </div>
+
+                <div id="result" class="mt-4" style="display: none;">
+                    <h4>Cropped Image</h4>
+                    <div class="text-center">
+                        <img id="preview" class="img-fluid" style="max-width: 100%;">
+                        <div class="mt-3">
+                            <a href="#" id="downloadBtn" class="btn btn-success">Download Cropped Image</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Cropper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+    <script src="image-cropper.js"></script>
+</body>
+</html> 

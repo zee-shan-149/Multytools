@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Tools - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .tool-card {
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="tool-container">
+            <div class="tool-header text-center mb-5">
+                <h1>Image Tools</h1>
+                <p class="text-muted">A collection of powerful image processing tools</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Image to PNG Converter -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card tool-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-image tool-icon"></i>
+                            <h5 class="card-title">Image to PNG Converter</h5>
+                            <p class="card-text">Convert any image format to PNG</p>
+                            <a href="image-to-png.html" class="btn btn-primary">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image to JPG Converter -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card tool-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-image tool-icon"></i>
+                            <h5 class="card-title">Image to JPG Converter</h5>
+                            <p class="card-text">Convert any image format to JPG</p>
+                            <a href="image-to-jpg.html" class="btn btn-primary">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Resizer -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card tool-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-arrows-angle-contract tool-icon"></i>
+                            <h5 class="card-title">Image Resizer</h5>
+                            <p class="card-text">Resize your images to any dimension</p>
+                            <a href="image-resizer.html" class="btn btn-primary">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Compressor -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card tool-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-file-earmark-zip tool-icon"></i>
+                            <h5 class="card-title">Image Compressor</h5>
+                            <p class="card-text">Compress images without losing quality</p>
+                            <a href="image-compressor.html" class="btn btn-primary">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Cropper -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card tool-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-scissors tool-icon"></i>
+                            <h5 class="card-title">Image Cropper</h5>
+                            <p class="card-text">Crop images to your desired size</p>
+                            <a href="image-cropper.html" class="btn btn-primary">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image to Base64 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card tool-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-code-slash tool-icon"></i>
+                            <h5 class="card-title">Image to Base64</h5>
+                            <p class="card-text">Convert images to Base64 format</p>
+                            <a href="image-to-base64.html" class="btn btn-primary">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WebP to PNG -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card tool-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-arrow-left-right tool-icon"></i>
+                            <h5 class="card-title">WebP to PNG</h5>
+                            <p class="card-text">Convert WebP images to PNG format</p>
+                            <a href="webp-to-png.html" class="btn btn-primary">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GIF Maker -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card tool-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-film tool-icon"></i>
+                            <h5 class="card-title">GIF Maker</h5>
+                            <p class="card-text">Create animated GIFs from images</p>
+                            <a href="gif-maker.html" class="btn btn-primary">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Code Generator -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card tool-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-qr-code tool-icon"></i>
+                            <h5 class="card-title">QR Code Generator</h5>
+                            <p class="card-text">Generate QR codes from text or URLs</p>
+                            <a href="qr-code-generator.html" class="btn btn-primary">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screenshot to PDF -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card tool-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-file-earmark-pdf tool-icon"></i>
+                            <h5 class="card-title">Screenshot to PDF</h5>
+                            <p class="card-text">Convert screenshots to PDF format</p>
+                            <a href="screenshot-to-pdf.html" class="btn btn-primary">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+</body>
+</html> 
