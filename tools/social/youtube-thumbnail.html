@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Thumbnail Downloader - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .thumbnail-preview {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: none;
+        }
+        .quality-options {
+            margin: 20px 0;
+        }
+        .quality-btn {
+            margin: 5px;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .error-message {
+            color: #dc3545;
+            display: none;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mb-4">YouTube Thumbnail Downloader</h1>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <form id="thumbnailForm">
+                            <div class="mb-3">
+                                <label for="videoUrl" class="form-label">YouTube Video URL</label>
+                                <input type="url" class="form-control" id="videoUrl" 
+                                       placeholder="https://www.youtube.com/watch?v=..." required>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-search"></i> Get Thumbnails
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="loading">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Fetching thumbnails...</p>
+                        </div>
+
+                        <div class="error-message">
+                            <i class="bi bi-exclamation-triangle"></i>
+                            <span id="errorText"></span>
+                        </div>
+
+                        <div id="thumbnailResults" style="display: none;">
+                            <h5 class="mt-4">Available Thumbnails</h5>
+                            <div class="quality-options">
+                                <button class="btn btn-outline-primary quality-btn" data-quality="maxres">
+                                    Max Resolution
+                                </button>
+                                <button class="btn btn-outline-primary quality-btn" data-quality="high">
+                                    High Quality
+                                </button>
+                                <button class="btn btn-outline-primary quality-btn" data-quality="medium">
+                                    Medium Quality
+                                </button>
+                                <button class="btn btn-outline-primary quality-btn" data-quality="standard">
+                                    Standard Quality
+                                </button>
+                            </div>
+
+                            <div class="text-center">
+                                <img id="thumbnailPreview" class="thumbnail-preview" alt="YouTube Thumbnail">
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <button id="downloadBtn" class="btn btn-success" disabled>
+                                    <i class="bi bi-download"></i> Download Thumbnail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5>How to use this tool:</h5>
+                        <ol>
+                            <li>Copy the URL of any YouTube video</li>
+                            <li>Paste the URL in the input field above</li>
+                            <li>Click "Get Thumbnails"</li>
+                            <li>Choose your preferred thumbnail quality</li>
+                            <li>Click "Download Thumbnail" to save the image</li>
+                        </ol>
+                        <p class="text-muted">Note: This tool supports all public YouTube videos. Private or unlisted videos are not supported.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+    <script src="youtube-thumbnail.js"></script>
+</body>
+</html> 

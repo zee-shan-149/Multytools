@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Video Downloader - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .post-info {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .error-message {
+            color: #dc3545;
+            display: none;
+            margin: 10px 0;
+        }
+        .video-preview {
+            max-width: 100%;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .download-options {
+            margin-top: 20px;
+        }
+        .stats-item {
+            margin: 10px 0;
+        }
+        .stats-value {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+        .post-text {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .format-option {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .format-option:hover {
+            background-color: #f8f9fa;
+        }
+        .format-option.selected {
+            background-color: #e9ecef;
+            border-color: #0d6efd;
+        }
+        .post-image {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mb-4">Instagram Video Downloader</h1>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <form id="downloadForm">
+                            <div class="mb-3">
+                                <label for="postUrl" class="form-label">Instagram Post URL</label>
+                                <input type="url" class="form-control" id="postUrl" 
+                                       placeholder="https://www.instagram.com/p/..." required>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-search"></i> Get Video Info
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="loading">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Fetching video information...</p>
+                        </div>
+
+                        <div class="error-message">
+                            <i class="bi bi-exclamation-triangle"></i>
+                            <span id="errorText"></span>
+                        </div>
+
+                        <div id="postResults" style="display: none;">
+                            <div class="post-info">
+                                <h5>Post Information</h5>
+                                <div id="postAuthor"></div>
+                                <div class="post-text" id="postText"></div>
+                                <div class="stats-item">
+                                    <span>Likes: </span>
+                                    <span id="postLikes" class="stats-value"></span>
+                                </div>
+                                <div class="stats-item">
+                                    <span>Comments: </span>
+                                    <span id="postComments" class="stats-value"></span>
+                                </div>
+                                <img id="postImage" class="post-image" style="display: none;">
+                                <video id="videoPreview" class="video-preview" controls>
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+
+                            <div class="download-options">
+                                <h5>Download Options</h5>
+                                <div class="mb-3">
+                                    <label class="form-label">Select Format</label>
+                                    <div id="formatOptions" class="d-flex flex-wrap">
+                                        <!-- Format options will be added here -->
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <button id="downloadBtn" class="btn btn-success" disabled>
+                                        <i class="bi bi-download"></i> Download Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5>How to use this tool:</h5>
+                        <ol>
+                            <li>Copy the URL of any Instagram post containing a video</li>
+                            <li>Paste the URL in the input field above</li>
+                            <li>Click "Get Video Info" to see post details</li>
+                            <li>Select your preferred format and quality</li>
+                            <li>Click "Download Video" to save the video</li>
+                        </ol>
+                        <p class="text-muted">Note: This tool allows you to download videos from public Instagram posts. Some posts may have restrictions on downloading.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+    <script src="instagram-downloader.js"></script>
+</body>
+</html> 

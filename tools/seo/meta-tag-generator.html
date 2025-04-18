@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tag Generator - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Meta Tag Generator</h1>
+                <p class="text-muted">Generate optimized meta tags for your website</p>
+            </div>
+
+            <div class="tool-content">
+                <form id="metaTagForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Page Title</label>
+                                <input type="text" class="form-control" id="title" required>
+                                <div class="form-text">The title of your webpage (50-60 characters recommended)</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Meta Description</label>
+                                <textarea class="form-control" id="description" rows="2" required></textarea>
+                                <div class="form-text">Brief description of your page (150-160 characters recommended)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="keywords" class="form-label">Keywords</label>
+                                <input type="text" class="form-control" id="keywords">
+                                <div class="form-text">Comma-separated keywords (optional)</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="author" class="form-label">Author</label>
+                                <input type="text" class="form-control" id="author">
+                                <div class="form-text">Name of the content author (optional)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="robots" class="form-label">Robots Meta Tag</label>
+                                <select class="form-select" id="robots">
+                                    <option value="index, follow">index, follow</option>
+                                    <option value="noindex, follow">noindex, follow</option>
+                                    <option value="index, nofollow">index, nofollow</option>
+                                    <option value="noindex, nofollow">noindex, nofollow</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="viewport" class="form-label">Viewport Settings</label>
+                                <select class="form-select" id="viewport">
+                                    <option value="width=device-width, initial-scale=1.0">Default (Responsive)</option>
+                                    <option value="width=device-width, initial-scale=1.0, maximum-scale=1.0">Fixed Scale</option>
+                                    <option value="width=device-width, initial-scale=1.0, user-scalable=no">No Zoom</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="canonical" class="form-label">Canonical URL</label>
+                        <input type="url" class="form-control" id="canonical">
+                        <div class="form-text">The canonical URL of your page (optional)</div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Generate Meta Tags</button>
+                    </div>
+                </form>
+
+                <div id="result" class="mt-4" style="display: none;">
+                    <h4>Generated Meta Tags</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <pre id="metaTagsOutput" class="bg-light p-3 rounded"></pre>
+                            <button class="btn btn-success mt-3" id="copyBtn">
+                                <i class="bi bi-clipboard"></i> Copy to Clipboard
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+    <script src="meta-tag-generator.js"></script>
+</body>
+</html> 

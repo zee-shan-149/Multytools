@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Word Converter - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .converter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .drop-zone {
+            border: 2px dashed #0d6efd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .drop-zone:hover {
+            background-color: #f8f9fa;
+        }
+        .drop-zone.dragover {
+            background-color: #e9ecef;
+            border-color: #0a58ca;
+        }
+        .file-info {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            display: none;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .error-message {
+            color: #dc3545;
+            display: none;
+            margin: 10px 0;
+        }
+        .conversion-options {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .option-group {
+            margin-bottom: 15px;
+        }
+        .download-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="converter-container">
+            <h1 class="text-center mb-4">PDF to Word Converter</h1>
+            
+            <div class="card">
+                <div class="card-body">
+                    <div class="drop-zone" id="dropZone">
+                        <i class="bi bi-file-earmark-pdf" style="font-size: 3rem;"></i>
+                        <h5 class="mt-3">Drag & Drop your PDF file here</h5>
+                        <p class="text-muted">or</p>
+                        <input type="file" id="fileInput" accept=".pdf" class="d-none">
+                        <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                            <i class="bi bi-upload"></i> Choose File
+                        </button>
+                    </div>
+
+                    <div class="file-info" id="fileInfo">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <i class="bi bi-file-earmark-pdf"></i>
+                                <span id="fileName"></span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-danger" onclick="clearFile()">
+                                <i class="bi bi-x"></i>
+                            </button>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted" id="fileSize"></small>
+                        </div>
+                    </div>
+
+                    <div class="loading">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-2">Converting your PDF to Word...</p>
+                    </div>
+
+                    <div class="error-message">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <span id="errorText"></span>
+                    </div>
+
+                    <div class="conversion-options">
+                        <h5>Conversion Options</h5>
+                        <div class="option-group">
+                            <label class="form-label">Output Format</label>
+                            <select class="form-select" id="outputFormat">
+                                <option value="docx">DOCX (Microsoft Word)</option>
+                                <option value="doc">DOC (Microsoft Word 97-2003)</option>
+                                <option value="rtf">RTF (Rich Text Format)</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label class="form-label">Image Quality</label>
+                            <select class="form-select" id="imageQuality">
+                                <option value="high">High (Best Quality)</option>
+                                <option value="medium" selected>Medium (Balanced)</option>
+                                <option value="low">Low (Smaller File Size)</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="preserveFormatting" checked>
+                                <label class="form-check-label" for="preserveFormatting">
+                                    Preserve Formatting
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center download-btn">
+                        <button id="convertBtn" class="btn btn-success" disabled>
+                            <i class="bi bi-file-earmark-word"></i> Convert to Word
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5>How to use this tool:</h5>
+                    <ol>
+                        <li>Upload your PDF file by dragging and dropping or clicking "Choose File"</li>
+                        <li>Select your preferred conversion options</li>
+                        <li>Click "Convert to Word" to start the conversion</li>
+                        <li>Download your converted Word document</li>
+                    </ol>
+                    <p class="text-muted">Note: The conversion process may take a few moments depending on the file size and complexity of the PDF.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+    <script src="pdf-to-word.js"></script>
+</body>
+</html> 

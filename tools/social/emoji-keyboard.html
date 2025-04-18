@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Keyboard - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .emoji-category {
+            margin-bottom: 1rem;
+        }
+        .emoji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        .emoji-item {
+            font-size: 1.5rem;
+            cursor: pointer;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        .emoji-item:hover {
+            background-color: #f0f0f0;
+        }
+        .search-container {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .search-input {
+            padding-left: 35px;
+        }
+        .recent-emojis {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        .copy-btn {
+            cursor: pointer;
+        }
+        .copy-btn:hover {
+            opacity: 0.8;
+        }
+        .emoji-preview {
+            font-size: 2rem;
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mb-4">Emoji Keyboard</h1>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <div class="search-container">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" class="form-control search-input" id="emojiSearch" placeholder="Search emojis...">
+                        </div>
+
+                        <div class="recent-emojis">
+                            <h6>Recent Emojis</h6>
+                            <div class="emoji-grid" id="recentEmojis">
+                                <!-- Recent emojis will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="emoji-category">
+                            <h6>Smileys & People</h6>
+                            <div class="emoji-grid" id="smileysEmojis">
+                                <!-- Smileys emojis will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="emoji-category">
+                            <h6>Animals & Nature</h6>
+                            <div class="emoji-grid" id="animalsEmojis">
+                                <!-- Animals emojis will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="emoji-category">
+                            <h6>Food & Drink</h6>
+                            <div class="emoji-grid" id="foodEmojis">
+                                <!-- Food emojis will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="emoji-category">
+                            <h6>Activities</h6>
+                            <div class="emoji-grid" id="activitiesEmojis">
+                                <!-- Activities emojis will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="emoji-category">
+                            <h6>Travel & Places</h6>
+                            <div class="emoji-grid" id="travelEmojis">
+                                <!-- Travel emojis will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="emoji-category">
+                            <h6>Objects</h6>
+                            <div class="emoji-grid" id="objectsEmojis">
+                                <!-- Objects emojis will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="emoji-category">
+                            <h6>Symbols</h6>
+                            <div class="emoji-grid" id="symbolsEmojis">
+                                <!-- Symbols emojis will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="emoji-category">
+                            <h6>Flags</h6>
+                            <div class="emoji-grid" id="flagsEmojis">
+                                <!-- Flags emojis will be added here -->
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h5>Selected Emoji</h5>
+                            <div class="emoji-preview" id="selectedEmoji">
+                                Click on an emoji to select it
+                            </div>
+                            <button class="btn btn-primary" onclick="copySelectedEmoji()">
+                                <i class="bi bi-clipboard"></i> Copy Emoji
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+    <script src="emoji-keyboard.js"></script>
+</body>
+</html> 

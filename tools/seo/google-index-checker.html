@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Index Checker - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .result-box {
+            max-height: 300px;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .index-status {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .indexed {
+            color: #198754;
+        }
+        .not-indexed {
+            color: #dc3545;
+        }
+        .loading {
+            color: #0dcaf0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mb-4">Google Index Checker</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <form id="indexCheckForm">
+                            <div class="mb-3">
+                                <label for="websiteUrl" class="form-label">Website URL</label>
+                                <input type="url" class="form-control" id="websiteUrl" 
+                                       placeholder="https://example.com" required>
+                                <div class="form-text">Enter the full URL of your website (including https://)</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Check Type</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="checkType" 
+                                           id="checkHomepage" value="homepage" checked>
+                                    <label class="form-check-label" for="checkHomepage">
+                                        Check Homepage Only
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="checkType" 
+                                           id="checkSpecificPage" value="specific">
+                                    <label class="form-check-label" for="checkSpecificPage">
+                                        Check Specific Page
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div id="specificPageInput" class="mb-3 d-none">
+                                <label for="pageUrl" class="form-label">Page URL</label>
+                                <input type="url" class="form-control" id="pageUrl" 
+                                       placeholder="https://example.com/page">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Check Index Status</button>
+                        </form>
+
+                        <div id="resultSection" class="d-none">
+                            <h3 class="mt-4">Index Status</h3>
+                            <div class="result-box">
+                                <div id="indexStatus" class="index-status loading">
+                                    <i class="bi bi-hourglass-split"></i> Checking...
+                                </div>
+                                <div id="indexDetails"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+    <script src="google-index-checker.js"></script>
+</body>
+</html> 

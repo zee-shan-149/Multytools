@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Downloader - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .video-info {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .error-message {
+            color: #dc3545;
+            display: none;
+            margin: 10px 0;
+        }
+        .format-option {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .format-option:hover {
+            background-color: #f8f9fa;
+        }
+        .format-option.selected {
+            background-color: #e9ecef;
+            border-color: #0d6efd;
+        }
+        .video-preview {
+            max-width: 100%;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .download-options {
+            margin-top: 20px;
+        }
+        .quality-badge {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mb-4">YouTube Video Downloader</h1>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <form id="downloadForm">
+                            <div class="mb-3">
+                                <label for="videoUrl" class="form-label">YouTube Video URL</label>
+                                <input type="url" class="form-control" id="videoUrl" 
+                                       placeholder="https://www.youtube.com/watch?v=..." required>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-search"></i> Get Video Info
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="loading">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Fetching video information...</p>
+                        </div>
+
+                        <div class="error-message">
+                            <i class="bi bi-exclamation-triangle"></i>
+                            <span id="errorText"></span>
+                        </div>
+
+                        <div id="videoResults" style="display: none;">
+                            <div class="video-info">
+                                <h5>Video Information</h5>
+                                <div id="videoTitle"></div>
+                                <div id="videoChannel"></div>
+                                <div id="videoDuration"></div>
+                                <img id="videoThumbnail" class="video-preview" alt="Video thumbnail">
+                            </div>
+
+                            <div class="download-options">
+                                <h5>Download Options</h5>
+                                <div class="mb-3">
+                                    <label class="form-label">Select Format</label>
+                                    <div id="formatOptions" class="d-flex flex-wrap">
+                                        <!-- Format options will be added here -->
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <button id="downloadBtn" class="btn btn-success" disabled>
+                                        <i class="bi bi-download"></i> Download Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5>How to use this tool:</h5>
+                        <ol>
+                            <li>Copy the URL of any YouTube video</li>
+                            <li>Paste the URL in the input field above</li>
+                            <li>Click "Get Video Info" to see available formats</li>
+                            <li>Select your preferred format and quality</li>
+                            <li>Click "Download Video" to start downloading</li>
+                        </ol>
+                        <p class="text-muted">Note: This tool supports downloading videos in various formats and qualities. Some videos may have restrictions on downloading.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+    <script src="youtube-downloader.js"></script>
+</body>
+</html> 

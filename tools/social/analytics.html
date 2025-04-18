@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Analytics - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .analytics-card {
+            transition: transform 0.2s;
+        }
+        .analytics-card:hover {
+            transform: translateY(-5px);
+        }
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+        .metric-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        .loading i {
+            font-size: 2rem;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .trend-indicator {
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+        .trend-up {
+            color: #198754;
+        }
+        .trend-down {
+            color: #dc3545;
+        }
+        .api-guide {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .api-guide h3 {
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+        .api-guide ol {
+            padding-left: 20px;
+        }
+        .api-guide li {
+            margin-bottom: 10px;
+        }
+        .api-guide .platform-icon {
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h1 class="text-center mb-4">Social Media Analytics</h1>
+                
+                <!-- API Key Guide Section -->
+                <div class="api-guide">
+                    <h3><i class="bi bi-key-fill"></i> How to Get API Keys</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4><i class="bi bi-instagram platform-icon"></i>Instagram API Key</h4>
+                            <ol>
+                                <li>Go to <a href="https://developers.facebook.com/" target="_blank">Facebook Developers</a></li>
+                                <li>Create a new app or select an existing one</li>
+                                <li>Add Instagram Basic Display to your app</li>
+                                <li>Go to App Dashboard > Basic Display</li>
+                                <li>Create a new access token</li>
+                                <li>Copy the generated token</li>
+                            </ol>
+                        </div>
+                        <div class="col-md-6">
+                            <h4><i class="bi bi-facebook platform-icon"></i>Facebook API Key</h4>
+                            <ol>
+                                <li>Visit <a href="https://developers.facebook.com/" target="_blank">Facebook Developers</a></li>
+                                <li>Create a new app or select an existing one</li>
+                                <li>Go to App Dashboard > Settings > Basic</li>
+                                <li>Copy the App ID and App Secret</li>
+                                <li>Generate an access token in the Graph API Explorer</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h4><i class="bi bi-twitter platform-icon"></i>Twitter API Key</h4>
+                            <ol>
+                                <li>Go to <a href="https://developer.twitter.com/" target="_blank">Twitter Developer Portal</a></li>
+                                <li>Create a new project and app</li>
+                                <li>Go to Keys and Tokens</li>
+                                <li>Generate API Key and Secret</li>
+                                <li>Generate Access Token and Secret</li>
+                            </ol>
+                        </div>
+                        <div class="col-md-6">
+                            <h4><i class="bi bi-linkedin platform-icon"></i>LinkedIn API Key</h4>
+                            <ol>
+                                <li>Visit <a href="https://www.linkedin.com/developers/" target="_blank">LinkedIn Developers</a></li>
+                                <li>Create a new app</li>
+                                <li>Go to Auth tab</li>
+                                <li>Copy the Client ID and Client Secret</li>
+                                <li>Generate an access token</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h4><i class="bi bi-tiktok platform-icon"></i>TikTok API Key</h4>
+                            <ol>
+                                <li>Go to <a href="https://developers.tiktok.com/" target="_blank">TikTok for Developers</a></li>
+                                <li>Create a new app</li>
+                                <li>Go to App Info</li>
+                                <li>Copy the Client Key and Client Secret</li>
+                                <li>Generate an access token</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <form id="analyticsForm">
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="platform" class="form-label">Select Platform</label>
+                                    <select class="form-select" id="platform" required>
+                                        <option value="instagram">Instagram</option>
+                                        <option value="facebook">Facebook</option>
+                                        <option value="twitter">Twitter</option>
+                                        <option value="linkedin">LinkedIn</option>
+                                        <option value="tiktok">TikTok</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="timeRange" class="form-label">Time Range</label>
+                                    <select class="form-select" id="timeRange" required>
+                                        <option value="7">Last 7 Days</option>
+                                        <option value="30">Last 30 Days</option>
+                                        <option value="90">Last 90 Days</option>
+                                        <option value="180">Last 6 Months</option>
+                                        <option value="365">Last Year</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="username" class="form-label">Username/Page Name</label>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="apiKey" class="form-label">API Key</label>
+                                    <input type="password" class="form-control" id="apiKey" required>
+                                    <small class="text-muted">Enter the access token or API key for the selected platform</small>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Analyze</button>
+                        </form>
+
+                        <div class="loading" id="loadingIndicator">
+                            <i class="bi bi-arrow-repeat"></i>
+                            <p>Analyzing data...</p>
+                        </div>
+
+                        <div id="resultsSection" class="d-none">
+                            <!-- Overview Metrics -->
+                            <div class="row mt-4">
+                                <div class="col-md-3">
+                                    <div class="card analytics-card">
+                                        <div class="card-body text-center">
+                                            <div class="metric-value" id="followersCount">0</div>
+                                            <div class="metric-label">Followers</div>
+                                            <div class="trend-indicator" id="followersTrend"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card analytics-card">
+                                        <div class="card-body text-center">
+                                            <div class="metric-value" id="engagementRate">0%</div>
+                                            <div class="metric-label">Engagement Rate</div>
+                                            <div class="trend-indicator" id="engagementTrend"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card analytics-card">
+                                        <div class="card-body text-center">
+                                            <div class="metric-value" id="postCount">0</div>
+                                            <div class="metric-label">Total Posts</div>
+                                            <div class="trend-indicator" id="postsTrend"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card analytics-card">
+                                        <div class="card-body text-center">
+                                            <div class="metric-value" id="reachCount">0</div>
+                                            <div class="metric-label">Average Reach</div>
+                                            <div class="trend-indicator" id="reachTrend"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Charts -->
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Engagement Over Time</h5>
+                                            <div class="chart-container">
+                                                <canvas id="engagementChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Post Types Distribution</h5>
+                                            <div class="chart-container">
+                                                <canvas id="postTypesChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Top Performing Posts -->
+                            <div class="card mt-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Top Performing Posts</h5>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Type</th>
+                                                    <th>Engagement</th>
+                                                    <th>Reach</th>
+                                                    <th>Likes</th>
+                                                    <th>Comments</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="topPostsTable">
+                                                <!-- Top posts will be added here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recommendations -->
+                            <div class="card mt-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Recommendations</h5>
+                                    <div id="recommendationsList">
+                                        <!-- Recommendations will be added here -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Export Options -->
+                            <div class="text-center mt-4">
+                                <button class="btn btn-success" id="exportData">Export Data</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+    <script src="analytics.js"></script>
+</body>
+</html> 

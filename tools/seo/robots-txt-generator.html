@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robots.txt Generator - Multi-Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .result-box {
+            max-height: 300px;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .copy-btn {
+            margin-top: 10px;
+        }
+        .rule-section {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mb-4">Robots.txt Generator</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <form id="robotsForm">
+                            <div class="mb-3">
+                                <label for="sitemapUrl" class="form-label">Sitemap URL (Optional)</label>
+                                <input type="url" class="form-control" id="sitemapUrl" 
+                                       placeholder="https://example.com/sitemap.xml">
+                            </div>
+
+                            <div class="rule-section">
+                                <h5>User-agent Rules</h5>
+                                <div id="userAgentRules">
+                                    <div class="user-agent-rule mb-3">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">User-agent</label>
+                                                <select class="form-select user-agent-select">
+                                                    <option value="*">All (*)</option>
+                                                    <option value="Googlebot">Googlebot</option>
+                                                    <option value="Bingbot">Bingbot</option>
+                                                    <option value="Slurp">Yahoo! Slurp</option>
+                                                    <option value="DuckDuckBot">DuckDuckBot</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Action</label>
+                                                <select class="form-select action-select">
+                                                    <option value="allow">Allow</option>
+                                                    <option value="disallow">Disallow</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12">
+                                                <label class="form-label">Path</label>
+                                                <input type="text" class="form-control path-input" placeholder="/admin/">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-primary btn-sm" id="addRuleBtn">
+                                    <i class="bi bi-plus"></i> Add Rule
+                                </button>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Crawl-delay (Optional)</label>
+                                <input type="number" class="form-control" id="crawlDelay" 
+                                       placeholder="10" min="0">
+                                <div class="form-text">Delay between crawls in seconds</div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Generate Robots.txt</button>
+                        </form>
+
+                        <div id="resultSection" class="d-none">
+                            <h3 class="mt-4">Generated Robots.txt</h3>
+                            <div class="result-box">
+                                <pre id="robotsOutput"></pre>
+                            </div>
+                            <button id="copyBtn" class="btn btn-secondary copy-btn">
+                                <i class="bi bi-clipboard"></i> Copy to Clipboard
+                            </button>
+                            <button id="downloadBtn" class="btn btn-success copy-btn ms-2">
+                                <i class="bi bi-download"></i> Download robots.txt
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/main.js"></script>
+    <script src="robots-txt-generator.js"></script>
+</body>
+</html> 
