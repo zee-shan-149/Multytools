@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Tools</title>
-    <!-- Bootstrap CSS -->
+    <title>Multi-Tools - Online PDF, Image, SEO & Social Media Tools</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
     <style>
         .tool-card {
             transition: transform 0.2s;
@@ -29,885 +26,167 @@
     </style>
 </head>
 <body>
-    <!-- Header will be loaded dynamically -->
-    <div id="header-container"></div>
+    <div id="header"></div>
 
-    <main class="container my-4">
-        <div class="row mb-4">
-            <div class="col-12">
-                <h1 class="text-center mb-4">Welcome to Multi-Tools</h1>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="searchInput" placeholder="Search for tools...">
-                    <button class="btn btn-primary" type="button">Search</button>
-                </div>
-            </div>
+    <div class="container mt-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Welcome to Multi-Tools</h1>
+            <p class="lead">A comprehensive suite of online tools for all your needs</p>
         </div>
 
-        <!-- PDF Suite Section -->
-        <div class="section-header">
-            <h2 class="text-center">PDF Suite</h2>
-            <p class="text-center text-muted">A comprehensive collection of PDF tools for all your document needs</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- PDF to Word Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-word tool-icon"></i>
-                        <h5 class="card-title">PDF to Word Converter</h5>
-                        <p class="card-text">Convert PDF files to editable Word documents</p>
-                        <a href="tools/pdf/pdf-to-word.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF to Excel Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-excel tool-icon"></i>
-                        <h5 class="card-title">PDF to Excel Converter</h5>
-                        <p class="card-text">Convert PDF tables to editable Excel spreadsheets</p>
-                        <a href="tools/pdf/pdf-to-excel.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Excel to PDF Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-excel tool-icon"></i>
-                        <h5 class="card-title">Excel to PDF Converter</h5>
-                        <p class="card-text">Convert Excel spreadsheets to PDF format</p>
-                        <a href="tools/pdf/excel-to-pdf.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF to JPG Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-image tool-icon"></i>
-                        <h5 class="card-title">PDF to JPG Converter</h5>
-                        <p class="card-text">Convert PDF pages to high-quality JPG images</p>
-                        <a href="tools/pdf/pdf-to-jpg.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Compressor -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-zip tool-icon"></i>
-                        <h5 class="card-title">PDF Compressor</h5>
-                        <p class="card-text">Reduce PDF file size while maintaining quality</p>
-                        <a href="tools/pdf/pdf-compressor.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Merger -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-plus tool-icon"></i>
-                        <h5 class="card-title">PDF Merger</h5>
-                        <p class="card-text">Combine multiple PDF files into one document</p>
-                        <a href="tools/pdf/pdf-merger.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Splitter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-break tool-icon"></i>
-                        <h5 class="card-title">PDF Splitter</h5>
-                        <p class="card-text">Split PDF files into multiple documents</p>
-                        <a href="tools/pdf/pdf-splitter.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF to PPT Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-ppt tool-icon"></i>
-                        <h5 class="card-title">PDF to PPT Converter</h5>
-                        <p class="card-text">Convert PDF files to editable PowerPoint presentations</p>
-                        <a href="tools/pdf/pdf-to-ppt.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Password Remover -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-key tool-icon"></i>
-                        <h5 class="card-title">PDF Password Remover</h5>
-                        <p class="card-text">Remove password protection from PDF files</p>
-                        <a href="tools/pdf/pdf-password-remover.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Rotator -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-arrow-clockwise tool-icon"></i>
-                        <h5 class="card-title">PDF Rotator</h5>
-                        <p class="card-text">Rotate PDF pages to correct orientation</p>
-                        <a href="tools/pdf/pdf-rotator.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Watermark Remover -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-water tool-icon"></i>
-                        <h5 class="card-title">PDF Watermark Remover</h5>
-                        <p class="card-text">Remove watermarks from PDF documents</p>
-                        <a href="tools/pdf/pdf-watermark-remover.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Watermark -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-water tool-icon"></i>
-                        <h5 class="card-title">PDF Watermark</h5>
-                        <p class="card-text">Add watermarks to PDF documents</p>
-                        <a href="tools/pdf/pdf-watermark.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF to Text Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-text tool-icon"></i>
-                        <h5 class="card-title">PDF to Text Converter</h5>
-                        <p class="card-text">Extract text from PDF files</p>
-                        <a href="tools/pdf/pdf-to-text.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF to PDF/A Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-pdf tool-icon"></i>
-                        <h5 class="card-title">PDF to PDF/A Converter</h5>
-                        <p class="card-text">Convert PDF files to PDF/A format for long-term archiving</p>
-                        <a href="tools/pdf/pdf-to-pdfa.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Page Numberer -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-123 tool-icon"></i>
-                        <h5 class="card-title">PDF Page Numberer</h5>
-                        <p class="card-text">Add page numbers to PDF documents</p>
-                        <a href="tools/pdf/pdf-page-numberer.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Editor -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-pencil-square tool-icon"></i>
-                        <h5 class="card-title">PDF Editor</h5>
-                        <p class="card-text">Edit PDF documents with text, images, and drawings</p>
-                        <a href="tools/pdf/pdf-editor.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- JPG to PDF Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-image tool-icon"></i>
-                        <h5 class="card-title">JPG to PDF Converter</h5>
-                        <p class="card-text">Convert JPG images to PDF documents</p>
-                        <a href="tools/pdf/jpg-to-pdf.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- OCR PDF -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-text-paragraph tool-icon"></i>
-                        <h5 class="card-title">OCR PDF</h5>
-                        <p class="card-text">Convert scanned PDFs to searchable and editable text</p>
-                        <a href="tools/pdf/ocr-pdf.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Word to PDF Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-word tool-icon"></i>
-                        <h5 class="card-title">Word to PDF Converter</h5>
-                        <p class="card-text">Convert Word documents to PDF format</p>
-                        <a href="tools/pdf/word-to-pdf.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PowerPoint to PDF Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-ppt tool-icon"></i>
-                        <h5 class="card-title">PowerPoint to PDF Converter</h5>
-                        <p class="card-text">Convert PowerPoint presentations to PDF format</p>
-                        <a href="tools/pdf/ppt-to-pdf.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- HTML to PDF Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-code tool-icon"></i>
-                        <h5 class="card-title">HTML to PDF Converter</h5>
-                        <p class="card-text">Convert HTML files or code to PDF format</p>
-                        <a href="tools/pdf/html-to-pdf.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Repair -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-tools tool-icon"></i>
-                        <h5 class="card-title">PDF Repair</h5>
-                        <p class="card-text">Fix corrupted or damaged PDF files</p>
-                        <a href="tools/pdf/pdf-repair.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scan to PDF -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-camera tool-icon"></i>
-                        <h5 class="card-title">Scan to PDF</h5>
-                        <p class="card-text">Scan documents using your camera and convert to PDF</p>
-                        <a href="tools/pdf/scan-to-pdf.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Remove Pages -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-minus tool-icon"></i>
-                        <h5 class="card-title">Remove Pages</h5>
-                        <p class="card-text">Remove specific pages from your PDF documents</p>
-                        <a href="tools/pdf/remove-pages.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Extract Pages -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="bi bi-file-earmark-text fs-1 me-3"></i>
-                            <h5 class="card-title mb-0">Extract Pages</h5>
+        <!-- PDF Tools Section -->
+        <div class="section mb-5">
+            <h2 class="text-center mb-4">PDF Suite</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-file-earmark-pdf fs-1 text-primary"></i>
+                            <h5 class="card-title mt-3">Merge PDF</h5>
+                            <p class="card-text">Combine multiple PDF files into one</p>
+                            <a href="tools/pdf/pdf-merger.html" class="btn btn-primary">Use Tool</a>
                         </div>
-                        <p class="card-text">Extract specific pages from your PDF documents and create a new PDF with just those pages.</p>
-                        <a href="tools/pdf/extract-pages.html" class="btn btn-primary">Use Tool</a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Organize PDF -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-text tool-icon"></i>
-                        <h5 class="card-title">Organize PDF</h5>
-                        <p class="card-text">Reorder, rotate, and organize pages in your PDF documents</p>
-                        <a href="tools/pdf/organize-pdf.html" class="btn btn-primary">Use Tool</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-scissors fs-1 text-primary"></i>
+                            <h5 class="card-title mt-3">Split PDF</h5>
+                            <p class="card-text">Split PDF into multiple files</p>
+                            <a href="tools/pdf/pdf-splitter.html" class="btn btn-primary">Use Tool</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Unlock PDF -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-lock tool-icon"></i>
-                        <h5 class="card-title">Unlock PDF</h5>
-                        <p class="card-text">Remove password protection and restrictions from PDF files</p>
-                        <a href="tools/pdf/unlock-pdf.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- NEXTGEN SMART PDF SUITE Section -->
-        <div class="section-header">
-            <h2 class="text-center">NEXTGEN SMART PDF SUITE</h2>
-            <p class="text-center text-muted">Advanced AI-powered PDF tools for modern document processing</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- AI-Powered PDF Summarizer -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-robot tool-icon"></i>
-                        <h5 class="card-title">AI-Powered PDF Summarizer</h5>
-                        <p class="card-text">Generate concise summaries of PDF documents using AI</p>
-                        <a href="tools/pdf/ai-summarizer.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF to Audio Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-mic tool-icon"></i>
-                        <h5 class="card-title">PDF to Audio Converter</h5>
-                        <p class="card-text">Convert PDF documents to natural-sounding audio</p>
-                        <a href="tools/pdf/pdf-to-audio.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Quiz Generator -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-question-circle tool-icon"></i>
-                        <h5 class="card-title">PDF Quiz Generator</h5>
-                        <p class="card-text">Create interactive quizzes from PDF content</p>
-                        <a href="tools/pdf/quiz-generator.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Meme Maker -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-emoji-laughing tool-icon"></i>
-                        <h5 class="card-title">PDF Meme Maker</h5>
-                        <p class="card-text">Create memes from PDF content with AI assistance</p>
-                        <a href="tools/pdf/meme-maker.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Translator -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-translate tool-icon"></i>
-                        <h5 class="card-title">PDF Translator</h5>
-                        <p class="card-text">Translate PDF documents to multiple languages</p>
-                        <a href="tools/pdf/pdf-translator.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF Annotator (Collaborative) -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-pencil-square tool-icon"></i>
-                        <h5 class="card-title">PDF Annotator</h5>
-                        <p class="card-text">Collaborative PDF annotation with real-time updates</p>
-                        <a href="tools/pdf/pdf-annotator.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PDF to Infographic Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-bar-chart tool-icon"></i>
-                        <h5 class="card-title">PDF to Infographic</h5>
-                        <p class="card-text">Convert PDF data into beautiful infographics</p>
-                        <a href="tools/pdf/pdf-to-infographic.html" class="btn btn-primary">Use Tool</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-file-earmark-zip fs-1 text-primary"></i>
+                            <h5 class="card-title mt-3">Compress PDF</h5>
+                            <p class="card-text">Reduce PDF file size</p>
+                            <a href="tools/pdf/pdf-compressor.html" class="btn btn-primary">Use Tool</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Image Tools Section -->
-        <div class="section-header">
-            <h2 class="text-center">Image Tools</h2>
-            <p class="text-center text-muted">A collection of powerful image processing tools</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- Image to PNG Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-image tool-icon"></i>
-                        <h5 class="card-title">Image to PNG Converter</h5>
-                        <p class="card-text">Convert any image format to PNG</p>
-                        <a href="tools/image/image-to-png.html" class="btn btn-primary">Use Tool</a>
+        <div class="section mb-5">
+            <h2 class="text-center mb-4">Image Tools</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-image fs-1 text-success"></i>
+                            <h5 class="card-title mt-3">Image Converter</h5>
+                            <p class="card-text">Convert images between formats</p>
+                            <a href="tools/image/image-converter.html" class="btn btn-success">Use Tool</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Image to JPG Converter -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-image tool-icon"></i>
-                        <h5 class="card-title">Image to JPG Converter</h5>
-                        <p class="card-text">Convert any image format to JPG</p>
-                        <a href="tools/image/image-to-jpg.html" class="btn btn-primary">Use Tool</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-arrows-angle-contract fs-1 text-success"></i>
+                            <h5 class="card-title mt-3">Image Compressor</h5>
+                            <p class="card-text">Reduce image file size</p>
+                            <a href="tools/image/image-compressor.html" class="btn btn-success">Use Tool</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Image Resizer -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-arrows-angle-contract tool-icon"></i>
-                        <h5 class="card-title">Image Resizer</h5>
-                        <p class="card-text">Resize your images to any dimension</p>
-                        <a href="tools/image/image-resizer.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Image Compressor -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-zip tool-icon"></i>
-                        <h5 class="card-title">Image Compressor</h5>
-                        <p class="card-text">Compress images without losing quality</p>
-                        <a href="tools/image/image-compressor.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Image Cropper -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-scissors tool-icon"></i>
-                        <h5 class="card-title">Image Cropper</h5>
-                        <p class="card-text">Crop images to your desired size</p>
-                        <a href="tools/image/image-cropper.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Image to Base64 -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-code-slash tool-icon"></i>
-                        <h5 class="card-title">Image to Base64</h5>
-                        <p class="card-text">Convert images to Base64 format</p>
-                        <a href="tools/image/image-to-base64.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- WebP to PNG -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-arrow-left-right tool-icon"></i>
-                        <h5 class="card-title">WebP to PNG</h5>
-                        <p class="card-text">Convert WebP images to PNG format</p>
-                        <a href="tools/image/webp-to-png.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- GIF Maker -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-film tool-icon"></i>
-                        <h5 class="card-title">GIF Maker</h5>
-                        <p class="card-text">Create animated GIFs from images</p>
-                        <a href="tools/image/gif-maker.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- QR Code Generator -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-qr-code tool-icon"></i>
-                        <h5 class="card-title">QR Code Generator</h5>
-                        <p class="card-text">Generate QR codes from text or URLs</p>
-                        <a href="tools/image/qr-code-generator.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Screenshot to PDF -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-pdf tool-icon"></i>
-                        <h5 class="card-title">Screenshot to PDF</h5>
-                        <p class="card-text">Convert screenshots to PDF format</p>
-                        <a href="tools/image/screenshot-to-pdf.html" class="btn btn-primary">Use Tool</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-arrows-fullscreen fs-1 text-success"></i>
+                            <h5 class="card-title mt-3">Image Resizer</h5>
+                            <p class="card-text">Resize images to any dimension</p>
+                            <a href="tools/image/image-resizer.html" class="btn btn-success">Use Tool</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- SEO Tools Section -->
-        <div class="section-header">
-            <h2 class="text-center">SEO Tools</h2>
-            <p class="text-center text-muted">A collection of powerful SEO optimization tools</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- Meta Tag Generator -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-tags tool-icon"></i>
-                        <h5 class="card-title">Meta Tag Generator</h5>
-                        <p class="card-text">Generate optimized meta tags for your website</p>
-                        <a href="tools/seo/meta-tag-generator.html" class="btn btn-primary">Use Tool</a>
+        <div class="section mb-5">
+            <h2 class="text-center mb-4">SEO Tools</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-search fs-1 text-info"></i>
+                            <h5 class="card-title mt-3">Keyword Research</h5>
+                            <p class="card-text">Find the best keywords for your content</p>
+                            <a href="tools/seo/keyword-research.html" class="btn btn-info">Use Tool</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Keyword Density Checker -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-graph-up tool-icon"></i>
-                        <h5 class="card-title">Keyword Density Checker</h5>
-                        <p class="card-text">Analyze keyword density in your content</p>
-                        <a href="tools/seo/keyword-density-checker.html" class="btn btn-primary">Use Tool</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-link-45deg fs-1 text-info"></i>
+                            <h5 class="card-title mt-3">Backlink Checker</h5>
+                            <p class="card-text">Analyze your website's backlinks</p>
+                            <a href="tools/seo/backlink-checker.html" class="btn btn-info">Use Tool</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Sitemap Generator -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-diagram-3 tool-icon"></i>
-                        <h5 class="card-title">Sitemap Generator</h5>
-                        <p class="card-text">Generate XML sitemaps for your website</p>
-                        <a href="tools/seo/sitemap-generator.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Robots.txt Generator -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-robot tool-icon"></i>
-                        <h5 class="card-title">Robots.txt Generator</h5>
-                        <p class="card-text">Generate robots.txt file for your website</p>
-                        <a href="tools/seo/robots-txt-generator.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Google Index Checker -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-search tool-icon"></i>
-                        <h5 class="card-title">Google Index Checker</h5>
-                        <p class="card-text">Check if your website is indexed by Google</p>
-                        <a href="tools/seo/google-index-checker.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Domain Authority Checker -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-shield-check tool-icon"></i>
-                        <h5 class="card-title">Domain Authority Checker</h5>
-                        <p class="card-text">Check your website's domain authority score</p>
-                        <a href="tools/seo/domain-authority-checker.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- XML Sitemap Validator -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-check tool-icon"></i>
-                        <h5 class="card-title">XML Sitemap Validator</h5>
-                        <p class="card-text">Validate your XML sitemap and check for errors</p>
-                        <a href="tools/seo/xml-sitemap-validator.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile-Friendly Test -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-phone tool-icon"></i>
-                        <h5 class="card-title">Mobile-Friendly Test</h5>
-                        <p class="card-text">Check if your website is optimized for mobile devices</p>
-                        <a href="tools/seo/mobile-friendly-test.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Page Speed Checker -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-speedometer2 tool-icon"></i>
-                        <h5 class="card-title">Page Speed Checker</h5>
-                        <p class="card-text">Analyze your website's loading speed and performance</p>
-                        <a href="tools/seo/page-speed-checker.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Backlink Checker -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-link-45deg tool-icon"></i>
-                        <h5 class="card-title">Backlink Checker</h5>
-                        <p class="card-text">Analyze your website's backlinks</p>
-                        <a href="tools/seo/backlink-checker.html" class="btn btn-primary">Use Tool</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-graph-up fs-1 text-info"></i>
+                            <h5 class="card-title mt-3">Website Analyzer</h5>
+                            <p class="card-text">Analyze your website's SEO performance</p>
+                            <a href="tools/seo/website-analyzer.html" class="btn btn-info">Use Tool</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Social Media Tools Section -->
-        <div class="section-header">
-            <h2 class="text-center">Social Media Tools</h2>
-            <p class="text-center text-muted">A collection of powerful social media management tools</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- Social Media Post Generator -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-pencil-square tool-icon"></i>
-                        <h5 class="card-title">Social Media Post Generator</h5>
-                        <p class="card-text">Generate engaging social media posts</p>
-                        <a href="tools/social/post-generator.html" class="btn btn-primary">Use Tool</a>
+        <div class="section mb-5">
+            <h2 class="text-center mb-4">Social Media Tools</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-postcard fs-1 text-warning"></i>
+                            <h5 class="card-title mt-3">Post Generator</h5>
+                            <p class="card-text">Create engaging social media posts</p>
+                            <a href="tools/social/social-post-generator.html" class="btn btn-warning">Use Tool</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Hashtag Generator -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-hash tool-icon"></i>
-                        <h5 class="card-title">Hashtag Generator</h5>
-                        <p class="card-text">Generate trending hashtags for your posts</p>
-                        <a href="tools/social/hashtag-generator.html" class="btn btn-primary">Use Tool</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-hash fs-1 text-warning"></i>
+                            <h5 class="card-title mt-3">Hashtag Generator</h5>
+                            <p class="card-text">Generate trending hashtags</p>
+                            <a href="tools/social/hashtag-generator.html" class="btn btn-warning">Use Tool</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Social Media Image Resizer -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-image tool-icon"></i>
-                        <h5 class="card-title">Social Media Image Resizer</h5>
-                        <p class="card-text">Resize images for different social platforms</p>
-                        <a href="tools/social/image-resizer.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Media Analytics -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-graph-up tool-icon"></i>
-                        <h5 class="card-title">Social Media Analytics</h5>
-                        <p class="card-text">Analyze your social media performance</p>
-                        <a href="tools/social/analytics.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Media Scheduler -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-calendar-check tool-icon"></i>
-                        <h5 class="card-title">Social Media Scheduler</h5>
-                        <p class="card-text">Schedule your social media posts</p>
-                        <a href="tools/social/scheduler.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Media Link Preview -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-link-45deg tool-icon"></i>
-                        <h5 class="card-title">Link Preview Generator</h5>
-                        <p class="card-text">Generate previews for your shared links</p>
-                        <a href="tools/social/link-preview.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Emoji Keyboard -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-emoji-smile tool-icon"></i>
-                        <h5 class="card-title">Emoji Keyboard</h5>
-                        <p class="card-text">Browse and copy emojis for your social media posts</p>
-                        <a href="tools/social/emoji-keyboard.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- YouTube Thumbnail Downloader -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-youtube tool-icon"></i>
-                        <h5 class="card-title">YouTube Thumbnail Downloader</h5>
-                        <p class="card-text">Download high-quality thumbnails from YouTube videos</p>
-                        <a href="tools/social/youtube-thumbnail.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- YouTube Tags Extractor -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-tags tool-icon"></i>
-                        <h5 class="card-title">YouTube Tags Extractor</h5>
-                        <p class="card-text">Extract and analyze tags from YouTube videos</p>
-                        <a href="tools/social/youtube-tags.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- YouTube Video Downloader -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-download tool-icon"></i>
-                        <h5 class="card-title">YouTube Video Downloader</h5>
-                        <p class="card-text">Download YouTube videos in various formats and qualities</p>
-                        <a href="tools/social/youtube-downloader.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TikTok Video Downloader -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-tiktok tool-icon"></i>
-                        <h5 class="card-title">TikTok Video Downloader</h5>
-                        <p class="card-text">Download TikTok videos without watermark</p>
-                        <a href="tools/social/tiktok-downloader.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Twitter Video Downloader -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-twitter tool-icon"></i>
-                        <h5 class="card-title">Twitter Video Downloader</h5>
-                        <p class="card-text">Download videos from Twitter posts</p>
-                        <a href="tools/social/twitter-downloader.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Facebook Video Downloader -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-facebook tool-icon"></i>
-                        <h5 class="card-title">Facebook Video Downloader</h5>
-                        <p class="card-text">Download videos from Facebook posts</p>
-                        <a href="tools/social/facebook-downloader.html" class="btn btn-primary">Use Tool</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Video Downloader -->
-            <div class="col-md-4 col-sm-6">
-                <div class="card tool-card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-instagram tool-icon"></i>
-                        <h5 class="card-title">Instagram Video Downloader</h5>
-                        <p class="card-text">Download videos from Instagram posts</p>
-                        <a href="tools/social/instagram-downloader.html" class="btn btn-primary">Use Tool</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-calendar-check fs-1 text-warning"></i>
+                            <h5 class="card-title mt-3">Content Scheduler</h5>
+                            <p class="card-text">Schedule your social media posts</p>
+                            <a href="tools/social/social-media-scheduler.html" class="btn btn-warning">Use Tool</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Footer will be loaded dynamically -->
-    <div id="footer-container"></div>
+    <div id="footer"></div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
 </body>
 </html> 
